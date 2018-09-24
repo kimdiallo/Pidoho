@@ -29,7 +29,7 @@ A step by step guide will follow soon.
 
 After pulling  the container: 
 
-```docker pull kimdiallo/docker_homebridge````
+```docker pull kimdiallo/docker_homebridge```
 
 you have to copy a config and maybe some some scrips for script2 in it and run it like this to be able to interact with the gpios: 
 
