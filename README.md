@@ -28,7 +28,7 @@ A step by step guide will follow soon.
 
 After building the container you have to copy a config and maybe some some scrips for script2 in it and run it like this to be able to interact with the gpios: 
 
-```docker run -d --name homebridge --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged kimdiallo/homebridge homebridge'''
+```docker run -d --name homebridge --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged kimdiallo/homebridge homebridge```
 
 to start the pigpiod in the container do on runtime: 
 
