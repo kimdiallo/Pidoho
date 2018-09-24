@@ -1,6 +1,7 @@
 # docker_homebridge
 Build homebridge in a docker container for raspberry pi
 
+https://hub.docker.com/r/kimdiallo/docker_homebridge/
 
 currently supported plugins: 
 
@@ -26,7 +27,11 @@ https://github.com/xkonni/raspberry-remote for switching PowerPlugs via 433Mhz
 A step by step guide will follow soon. 
 
 
-After building the container you have to copy a config and maybe some some scrips for script2 in it and run it like this to be able to interact with the gpios: 
+After pulling  the container: 
+
+```docker pull kimdiallo/docker_homebridge````
+
+you have to copy a config and maybe some some scrips for script2 in it and run it like this to be able to interact with the gpios: 
 
 ```docker run -d --name homebridge --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged kimdiallo/homebridge homebridge```
 
