@@ -1,4 +1,4 @@
-# docker_homebridge
+# homebridge in a docker container for Raspberry Pi
 Build homebridge in a docker container for raspberry pi
 
 https://hub.docker.com/r/kimdiallo/docker_homebridge/
