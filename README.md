@@ -1,6 +1,30 @@
 # homebridge in a docker container for Raspberry Pi
 Build homebridge in a docker container for raspberry pi
 
+1. clone this git and enter it 
+
+```git clone https://github.com/kimdiallo/homebridge.git && cd homebridge```
+
+2. Then you have to copy a config and maybe some some scrips for script2 in the volume folder(you find Templates in it and a 
+list of NPMs with links to futher information) and build it on your device.    
+
+```docker build .```
+
+
+
+```docker run -d --name homebridge --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged kimdiallo/homebridge homebridge```
+
+to start the pigpiod in the container do on runtime: 
+
+```docker exec homebridge pigpiod```
+
+and to make the qr-code visible for importing the bridge in the Home-App run this:
+
+```docker logs homebridge```
+
+
+
+
 https://hub.docker.com/r/kimdiallo/docker_homebridge/
 
 currently supported plugins: 
@@ -24,21 +48,5 @@ and
 https://github.com/xkonni/raspberry-remote for switching PowerPlugs via 433Mhz
 
 
-A step by step guide will follow soon. 
 
 
-After pulling  the container: 
-
-```docker pull kimdiallo/docker_homebridge```
-
-you have to copy a config and maybe some some scrips for script2 in it and run it like this to be able to interact with the gpios: 
-
-```docker run -d --name homebridge --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged kimdiallo/homebridge homebridge```
-
-to start the pigpiod in the container do on runtime: 
-
-```docker exec homebridge pigpiod```
-
-and to make the qr-code visible for importing the bridge in the Home-App run this:
-
-```docker logs homebridge```

@@ -1,4 +1,5 @@
-#Dockerfile for my Homebridgesetup
+# Dockerfile for a homebridgesetup on Raspberry-Pi that is able to interact with GPIOs
+
 FROM resin/rpi-raspbian:stretch
 MAINTAINER Kim Diallo <mail@diallo.kim>
 
@@ -7,7 +8,6 @@ MAINTAINER Kim Diallo <mail@diallo.kim>
 RUN apt-get update
 RUN apt-get -y install -f --no-install-recommends \
 	git \
-	curl \
     	wget \
 	build-essential \
 	python-minimal \
@@ -64,4 +64,4 @@ RUN npm i -g --unsafe-perm homebridge-script2
 COPY ./wrapper.sh /usr/local/bin/wrapper
 RUN chmod +x /usr/local/bin/wrapper 
 
-ENTRYPOINT ["wrapper"] 
+CMD ["/usr/local/bin/wrapper"] 
