@@ -50,7 +50,7 @@ RUN cd /opt/ \
 	&& ln -s /opt/raspberry-remote/send /usr/local/bin/send
 
 
-#Install Homebridge and needed plugins
+# Install Homebridge and needed plugins
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
 RUN npm i -g --unsafe-perm homebridge-dht \
@@ -59,3 +59,9 @@ RUN npm i -g --unsafe-perm homebridge-gpio-device
 RUN npm i -g --unsafe-perm homebridge-broadlink-rm
 RUN npm i -g --unsafe-perm homebridge-platform-maxcube
 RUN npm i -g --unsafe-perm homebridge-script2
+
+# Add a wrapper-script to run pigpiod and homebridge in one contaier
+COPY ./wrapper.sh /usr/local/bin/wrapper
+RUN chmod +x /usr/local/bin/wrapper 
+
+ENTRYPOINT ["wrapper"] 
