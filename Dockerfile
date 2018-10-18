@@ -21,7 +21,7 @@ RUN apt-get clean
 
 #Get, build and link nodejs
 
-ARG VERSION="v10.12.0"
+ARG VERSION="v8.12.0"
 RUN wget https://nodejs.org/dist/${VERSION}/node-${VERSION}-linux-armv7l.tar.gz \
 	&& tar -zxvf node-${VERSION}-linux-armv7l.tar.gz -C /opt \
 	&& echo "export PATH=/opt/node-${VERSION}-linux-armv7l/bin:$PATH" >> /root/.bashrc \
