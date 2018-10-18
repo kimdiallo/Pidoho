@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # run pigpiod 
-./pigpiod
+./usr/bin/pigpiod
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start pigpiod: $status"
@@ -9,7 +9,7 @@ if [ $status -ne 0 ]; then
 fi
 
 # run homebridge 
-./homebridge 
+homebridge 
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start homebridge: $status"
