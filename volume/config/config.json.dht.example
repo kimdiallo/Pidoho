@@ -1,0 +1,19 @@
+{
+    "bridge": {
+        "name": "EXAMPLE_BRIDGE",
+        "username": "CC:22:D3:E2:EE:32",
+        "port": 51080,
+        "pin": "000-00-000"
+    },
+    "platforms": [ ],
+    "accessories": [
+        {
+            "accessory": "Dht",
+            "name": "dht22",
+            "name_temperature": "Temperatur",
+            "name_humidity": "Luftfeuchtigkeit ",
+            "service": "dht22"
+        }
+    ]
+}
+

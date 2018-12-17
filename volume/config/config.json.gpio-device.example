@@ -1,0 +1,26 @@
+{
+    "bridge": {
+        "name": "EXAMPLE_BRIDGE",
+        "username": "CC:22:D3:E2:EE:32",
+        "port": 51080,
+        "pin": "000-00-000"
+    },
+    "platforms": [ ],
+    "accessories": [
+        {
+            "accessory": "GPIODevice",
+            "name": "OPEN_THE_DOOR",
+            "type": "LockMechanism",
+            "pin": 29,
+            "inverted": true,
+            "duration": 5
+        },
+        {
+            "accessory": "GPIODevice",
+            "type": "Lightbulb",
+            "name": "LIGHT",
+            "pin": 28
+        }
+    ]
+}
+

@@ -1,0 +1,47 @@
+{
+    "bridge": {
+        "name": "EXAMPLE_BRIDGE",
+        "username": "CC:22:D3:E2:EE:32",
+        "port": 51080,
+        "pin": "000-00-000"
+    },
+    "platforms": [
+        {
+            "platform": "BroadlinkRM",
+            "name": "Broadlink RM",
+            "hideScanFrequencyButton": false,
+            "hideLearnButton": false,
+            "hideWelcomeMessage": true,
+            "hosts": [
+                {
+                    "address": "$IP_OF_YOUR_BROARDLINK_RM",
+                    "mac": "$MAC_OF_YOUR_BROARDLINK_RM",
+                    "isRFSupported": true
+                }
+            ],
+            "accessories": [
+                {
+                    "name": "ON/OFF",
+                    "type": "switch",
+                    "host": "$IP_OF_YOUR_BROARDLINK_RM",
+                    "data": {
+                        "on": "SUPERLONG_CODE",
+                        "off": "SUPERLONG_CODE"
+                    }
+                },
+                {
+                    "name": "weiß",
+                    "type": "switch",
+                    "host": "$IP_OF_YOUR_BROARDLINK_RM",
+                    "data": [
+                        {
+                            "data": "SUPERLONG_CODE",
+                            "sendCount": 5,
+                            "interval": 0.5
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+

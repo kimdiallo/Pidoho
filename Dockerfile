@@ -1,27 +1,35 @@
-# Dockerfile for a homebridgesetup on Raspberry-Pi that is able to interact with GPIOs
+## Dockerfile for a homebridgesetup on Raspberry-Pi that is able to interact with GPIOs
 
 FROM resin/rpi-raspbian:stretch
 MAINTAINER Kim Diallo <mail@diallo.kim>
 
 
 #Do the apt-get foo
-RUN apt-get update
+RUN apt-get update 
 RUN apt-get -y install -f --no-install-recommends \
 	git \
     	wget \
 	build-essential \
 	python-minimal \
-	python-pigpio \
 	python \
-	nfs-common \
-	pigpio
+	nfs-common 
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 
 
+#Get, build and link pigpio
+
+RUN wget abyz.me.uk/rpi/pigpio/pigpio.tar \
+	&& tar xf pigpio.tar \
+	&& cd PIGPIO \
+	&& make \
+	&& make install \
+	&& rm -rf pigpio.tar \
+	&& rm -rf PIGPIO
+
 #Get, build and link nodejs
 
-ARG VERSION="v8.12.0"
+ARG VERSION="v8.14.0"
 RUN wget https://nodejs.org/dist/${VERSION}/node-${VERSION}-linux-armv7l.tar.gz \
 	&& tar -zxvf node-${VERSION}-linux-armv7l.tar.gz -C /opt \
 	&& echo "export PATH=/opt/node-${VERSION}-linux-armv7l/bin:$PATH" >> /root/.bashrc \
@@ -54,7 +62,7 @@ RUN cd /opt/ \
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
 RUN npm i -g --unsafe-perm homebridge-dht \
-	&& ln -s /usr/local/lib/node_modules/homebridge-dht/dht22 /usr/local/bin/dht22
+	&& ln -s /opt/node-${VERSION}-linux-armv7l/lib/node_modules/homebridge-dht/dht22 /usr/local/bin/dht22
 RUN npm i -g --unsafe-perm homebridge-gpio-device
 RUN npm i -g --unsafe-perm homebridge-broadlink-rm
 RUN npm i -g --unsafe-perm homebridge-platform-maxcube

@@ -1,0 +1,3 @@
+
+rm script.flag
+

@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # run pigpiod 
-./usr/bin/pigpiod
+./usr/local/bin/pigpiod
 status=$?
 if [ $status -ne 0 ]; then
   echo "Failed to start pigpiod: $status"
