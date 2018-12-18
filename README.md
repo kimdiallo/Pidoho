@@ -1,9 +1,16 @@
 # RPi Docker homebridge 
 
-## About 
-Goal is to provide an easy way to run a stable and lightweight smart home solution based on [homebridge.io](https://github.com/nfarina/homebridge) and [docker](https://www.docker.com/) which allows to control, automate and monitor your home via Siri and [Apple HomeKit](https://www.apple.com/ios/home/).
 
-Free and Open Source Software on Hardware low in purchase and upkeep. 
+<p align="center">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/archive/7/79/20140516082706%21Docker_%28container_engine%29_logo.png" height="200">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rasp_turn_around.gif" height="200">
+         <img src="https://cl.ly/99e68ac49cef/Logo2x.png" height="200">
+</p>
+
+## About 
+Goal is to provide an easy way to run a fast stable and lightweight smart home solution based on [homebridge.io](https://github.com/nfarina/homebridge) and [docker](https://www.docker.com/) which allows to control, automate and monitor your home via Siri and [Apple HomeKit](https://www.apple.com/ios/home/).
+
+Free and open source software designed to run on hardware low in purchase and upkeep. 
 
 And still something to tinker. 
 
@@ -15,12 +22,12 @@ Basic equipment
 * a [Network cable](https://www.amazon.com/AmazonBasics-Network-Ethernet-Patch-Cable/dp/B013PUMQYY/ref=sr_1_3_acs_sk_pb_2_sl_1?ie=UTF8&qid=1545099260&sr=8-3-acs&keywords=cat+7+ethernet+cable+3ft)
 * another computer to access to your Pi via SSH and fill the mircoSD card with with the required operating system
 
-Everything else is modular depends on your use case and will be discussed separately, wiki articles will be published gradually. 
+Everything else is modular and depends on your special use case, it will be explained separately. The wiki articles will be published gradually. 
 
 ## Required Software 
 * The latest version of [HypriotOS](https://blog.hypriot.com/downloads/) 
 
-  HypriotOS is a minimal Debian-based operating system optimized for Docker awesomeness with always up-to-date Docker versions and a big amount of BÄÄM<3 [read more](https://blog.hypriot.com/about/)
+  HypriotOS is a minimal Debian-based operating system optimized for Docker awesomeness with always up-to-date Docker versions and a big amount of BÄÄM<3 [read more about it](https://blog.hypriot.com/about/)
 
 * And without that you have to take care of it directly, you still get the benefit of these handpicked software components
 
