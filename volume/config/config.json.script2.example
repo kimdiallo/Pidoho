@@ -13,6 +13,13 @@
               "on": "/scripte/EXAMPLE/on.sh 1",
               "off": "/scripte/EXAMPLE/off.sh 1",
               "fileState": "/scripte/EXAMPLE/script.flag"
+        },
+        {
+              "accessory": "Script2",
+              "name": "EXAMPLE-Send",
+              "on": "/scripte/EXAMPLE-Send/on.sh 1",
+              "off": "/scripte/EXAMPLE-Send/off.sh 1",
+              "fileState": "/scripte/EXAMPLE-Send/script.flag"
         }
     ]
 }

@@ -1,3 +1,3 @@
 
-rm script.flag
+rm /scripts/EXAMPLE/script.flag
 

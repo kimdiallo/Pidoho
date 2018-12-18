@@ -1,3 +1,3 @@
 
-echo "This is flag Switch ON" > script.flag
+echo "This is flag Switch ON" > /scripts/EXAMPLE/script.flag
 
