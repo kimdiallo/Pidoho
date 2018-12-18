@@ -1,15 +1,14 @@
 ## Dockerfile for a homebridgesetup on Raspberry-Pi that is able to interact with GPIOs
 
-MAINTAINER Kim Diallo <mail@diallo.kim>
-
 #the base image 
 FROM resin/rpi-raspbian:stretch
 
 # qemu post_checkout for automated build 
 COPY qemu-arm-static /usr/bin
 
+MAINTAINER Kim Diallo <mail@diallo.kim>
 
-#Do the apt-get foo
+#Do the needed apt-get foo
 RUN apt-get update 
 RUN apt-get -y install -f --no-install-recommends \
         git \
