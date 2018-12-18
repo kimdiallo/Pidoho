@@ -1,4 +1,4 @@
-# RPi Docker homebridge 
+# RPi docker homebridge 
 
 
 <p align="center">
