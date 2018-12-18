@@ -3,9 +3,6 @@
 #the base image 
 FROM resin/rpi-raspbian:stretch
 
-# qemu post_checkout for automated build 
-COPY qemu-arm-static /usr/bin
-
 MAINTAINER Kim Diallo <mail@diallo.kim>
 
 #Do the needed apt-get foo
