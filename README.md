@@ -16,7 +16,7 @@ And still something to tinker.
 
 ## Required Hardware 
 Basic equipment 
-* a [Raspberry Pi](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) (I use the liked model 3b+ but it also works on a Raspberry Pi 2.) 
+* a [Raspberry Pi](https://www.raspberrypi.org/products/raspberry-pi-3-model-b-plus/) (I use the linked model 3b+ but it also works on a Raspberry Pi 2.) 
 * a [power supply like this](https://www.raspberrypi.org/products/raspberry-pi-universal-power-supply/)
 * a [microSD card](https://www.amazon.com/SanDisk-MicroSDHC-Memory-SDSQUNC-032G-adapter/dp/B015IYUFDE/ref=sr_1_4?ie=UTF8&qid=1545098940&sr=8-4&keywords=micro+sd+card+with+usb+adapter) with an adapter that fits to your main computer
 * a [Network cable](https://www.amazon.com/AmazonBasics-Network-Ethernet-Patch-Cable/dp/B013PUMQYY/ref=sr_1_3_acs_sk_pb_2_sl_1?ie=UTF8&qid=1545099260&sr=8-3-acs&keywords=cat+7+ethernet+cable+3ft)
