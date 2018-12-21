@@ -22,7 +22,7 @@ fi
 while sleep 60; do
   ps aux |grep pigpiod |grep -q -v grep
   PG_STAT=$?
-  ps aux |grep my_second_process |grep -q -v grep
+  ps aux |grep homebridge |grep -q -v grep
   HB_STAT=$?
   if [ $PG_STAT -ne 0 -o $HB_STAT -ne 0 ]; then
     echo "Somethinh went wrong in here!"
