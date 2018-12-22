@@ -11,7 +11,6 @@ RUN apt-get -y install -f --no-install-recommends \
         git \
 	wget \
 	build-essential \
-        python-minimal \
         python 
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
@@ -21,9 +20,8 @@ RUN wget abyz.me.uk/rpi/pigpio/pigpio.tar \
         && tar xf pigpio.tar \
         && cd PIGPIO \
         && make \
-        && make install \
-        && rm -rf pigpio.tar \
-        && rm -rf PIGPIO
+        && make install 
+RUN rm -rf pigpio.tar PIGPIO
 
 #Get, build and link nodejs
 ARG VERSION="v8.14.0"
@@ -33,8 +31,6 @@ RUN wget https://nodejs.org/dist/${VERSION}/node-${VERSION}-linux-armv7l.tar.gz 
         && rm -rf /node-${VERSION}-linux-armv7l.tar.gz
 ENV PATH="/opt/node-${VERSION}-linux-armv7l/bin:$PATH"
 
-
-#Get, build and link the needed gits
 
 # Install Homebridge and needed plugins
 RUN npm i -g --upgrade npm@latest
