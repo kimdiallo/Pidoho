@@ -8,22 +8,13 @@ MAINTAINER Kim Diallo <mail@diallo.kim>
 #Do the needed apt-get foo
 RUN apt-get update 
 RUN apt-get -y install -f --no-install-recommends \
-        git \
 	wget \
-	build-essential \
+        build-essential \
         python-minimal \
         python 
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt-get clean
 
-#Get, build and link pigpio
-RUN wget abyz.me.uk/rpi/pigpio/pigpio.tar \
-        && tar xf pigpio.tar \
-        && cd PIGPIO \
-        && make \
-        && make install \
-        && rm -rf pigpio.tar \
-        && rm -rf PIGPIO
 
 #Get, build and link nodejs
 ARG VERSION="v8.14.0"
@@ -34,16 +25,12 @@ RUN wget https://nodejs.org/dist/${VERSION}/node-${VERSION}-linux-armv7l.tar.gz 
 ENV PATH="/opt/node-${VERSION}-linux-armv7l/bin:$PATH"
 
 
-#Get, build and link the needed gits
-
 # Install Homebridge and needed plugins
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
-RUN npm i -g --unsafe-perm homebridge-dht \
-	&& ln -s /opt/node-${VERSION}-linux-armv7l/lib/node_modules/homebridge-dht/dht22 /usr/local/bin/dht22
+RUN npm i -g --unsafe-perm homebridge-platform-maxcube
 
-# Add a wrapper-script to run pigpiod and homebridge in one contaier
-COPY wrapper.sh /usr/local/bin/wrapper
-RUN chmod +x /usr/local/bin/wrapper 
+# get the config 
+COPY config.json /root/.homebridge/config.json
 
-CMD ["/usr/local/bin/wrapper"] 
+CMD ["homebridge"] 
