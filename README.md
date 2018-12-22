@@ -2,9 +2,9 @@
 
 
 <p align="center">
-         <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rasp_turn_around.gif" height="200">
-         <img src="https://upload.wikimedia.org/wikipedia/commons/archive/7/79/20140516082706%21Docker_%28container_engine%29_logo.png" height="200">
-         <img src="https://cl.ly/99e68ac49cef/Logo2x.png" height="200">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rasp_turn_around.gif" height="100">
+         <img src="https://upload.wikimedia.org/wikipedia/commons/archive/7/79/20140516082706%21Docker_%28container_engine%29_logo.png" height="100">
+         <img src="https://cl.ly/99e68ac49cef/Logo2x.png" height="100">
 </p>
 
 ## About 
@@ -42,42 +42,52 @@ Everything else is modular and depends on your special use case, it will be expl
   * and many many thausend more lines of community driven code
 
 
+## How it works 
+
+A more detailed A detailed wiki with step by step guides is under construction, but very briefly:
+
+ * If you are using a Raspberry Pi 3 B you can just pull the image  
+```bash
+docker pull kimdiallo/homebridge:latest
+```
+
+ * And run it with specified volume for the config and also `--privileged`and with a  device if you need access to GPIOs   
+```bash
+docker run -d --name NAME --restart unless-stopped --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -v /PATH/TO/LOKATION/OF/YUOR/config.json:/root/.homebridge kimdiallo/homebridge:latest
+```
 
 
+<br/>
 
+ * If you use an other Pi, you need to build the image yourself. Just clone my repo
+```bash
+git clone https://github.com/kimdiallo/RPi-docker-homebridge.git
+```
 
+ * Enter it  
+```bash
+cd RPi-docker-homebridge 
+```
 
+ * And use the icluded Dockerfile 
+```bash
+docker build . 
+```
 
+ * And run it with specified volume for the config and also `--privileged`and with a  device if you need access to GPIOs   
+```bash
+docker run -d --name NAME --restart unless-stopped --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -v /PATH/TO/LOKATION/OF/YUOR/config.json:/root/.homebridge kimdiallo/homebridge:latest
+```
 
+ * You can find the QR code for the HomeApp like this
+```bash
+docker logs [CONTAINER]
+```
 
+In the repo you will find some config and script examples and for further information take these links 
 
-
-# below is the old part | work in progress
-
-1. clone this git and enter it 
-
-```git clone https://github.com/kimdiallo/homebridge.git && cd homebridge```
-
-2. Then you have to copy a config and maybe some some scrips for script2 in the volume folder(you find Templates in it and a 
-list of NPMs with links to futher information) and build it on your device.    
-
-```docker build .```
-
-
-
-```docker run -d --name homebridge --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged kimdiallo/homebridge homebridge```
-
-to start the pigpiod in the container do on runtime: 
-
-```docker exec homebridge pigpiod```
-
-and to make the qr-code visible for importing the bridge in the Home-App run this:
-
-```docker logs homebridge```
-
-
-
-
+Homebridge itself
+ 
 https://hub.docker.com/r/kimdiallo/docker_homebridge/
 
 currently supported plugins: 
@@ -92,13 +102,6 @@ https://www.npmjs.com/package/homebridge-platform-maxcube
 
 https://www.npmjs.com/package/homebridge-script2
 
-Also build in: 
-
-http://wiringpi.com/ to enable the possibillity  interact with the gpios
-
-and
-
-https://github.com/xkonni/raspberry-remote for switching PowerPlugs via 433Mhz
 
 
 
