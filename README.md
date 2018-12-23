@@ -1,5 +1,6 @@
-# Raspberry Pi docker homebridge 
-# * * * *  **_Pidoho_**  * * * * *
+#  **_Pidoho_** 
+
+###### Raspberry Pi docker homebridge 
 
 <p align="center">
          <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rasp_turn_around.gif" height="100">
