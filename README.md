@@ -44,7 +44,8 @@ docker logs EXAMPLE
 ```
 
 <br/>
-All the rest then happens via HomeApp / Siri on your Apple device. 
+All the rest then happens via HomeApp / Siri on your Apple device.
+ 
 
 
 Of course that was only a short form, it is more detailed in the [wiki](https://github.com/kimdiallo/RPi-docker-homebridge/wiki).
