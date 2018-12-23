@@ -10,16 +10,16 @@
         {
               "accessory": "Script2",
               "name": "EXAMPLE",
-              "on": "/scripte/EXAMPLE/on.sh 1",
-              "off": "/scripte/EXAMPLE/off.sh 1",
-              "fileState": "/scripte/EXAMPLE/script.flag"
+              "on": "/scripts/EXAMPLE/on.sh 1",
+              "off": "/scripts/EXAMPLE/off.sh 1",
+              "fileState": "/scripts/EXAMPLE/script.flag"
         },
         {
               "accessory": "Script2",
               "name": "EXAMPLE-Send",
-              "on": "/scripte/EXAMPLE-Send/on.sh 1",
-              "off": "/scripte/EXAMPLE-Send/off.sh 1",
-              "fileState": "/scripte/EXAMPLE-Send/script.flag"
+              "on": "/scripts/EXAMPLE-Send/on.sh 1",
+              "off": "/scripts/EXAMPLE-Send/off.sh 1",
+              "fileState": "/scripts/EXAMPLE-Send/script.flag"
         }
     ]
 }
