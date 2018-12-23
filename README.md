@@ -30,6 +30,7 @@ mkdir -p ~/EXAMPLE
 ```
  
  <br/>
+ 
  * place your config.json in it and run the container like this
  
  ```bash
@@ -37,6 +38,7 @@ mkdir -p ~/EXAMPLE
  ```
 
 <br/>
+
  * In addition, you should take a look at the logs on first run, they contain the QR code that you need to add to the HomeApp 
 
 ```bash
