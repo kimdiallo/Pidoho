@@ -8,7 +8,7 @@
 </p>
 
 ## About 
-The goal is to provide an easy way to run a fast, stable and lightweight smarthome solution based on [homebridge.io](https://github.com/nfarina/homebridge) and [docker](https://www.docker.com/) which allows to control, automate and monitor your home via Siri and [Apple HomeKit](https://www.apple.com/ios/home/).
+The goal is to provide an easy way to run a fast, stable and lightweight smarthome solution based on [homebridge.io](https://github.com/nfarina/homebridge) and [docker](https://www.docker.com/) which allows you to control, automate and monitor your home via Siri and [Apple HomeKit](https://www.apple.com/ios/home/).
 
 Free and open source software designed to run on hardware low in purchase and upkeep. 
 
@@ -22,65 +22,27 @@ Depends on what you like to control, you need some more hardware like PIR, photo
 
 ## How it works 
 
-A more detailed A detailed wiki with step by step guides is under construction, but very briefly:
+A detailed wiki with step by step guides is under construction, but very briefly:
 
- * If you are using a Raspberry Pi 3 B you can just pull the image  
+ * If you are using a Raspberry Pi 3 B and you are already logged in ad [dockerhub](https://hub.docker.com), you just have to create a folder for persistent stuff and the config.json 
 ```bash
-docker pull kimdiallo/homebridge:latest
+mkdir -p ~/container1 
 ```
-
- * And run it with specified volume for the config and also `--privileged`and with a  device if you need access to GPIOs   
-```bash
-docker run -d --name NAME --restart unless-stopped --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -v /PATH/TO/LOKATION/OF/YUOR/config.json:/root/.homebridge kimdiallo/homebridge:latest
-```
-
-
-<br/>
-
- * If you use an other Pi, you need to build the image yourself. Just clone my repo
-```bash
-git clone https://github.com/kimdiallo/RPi-docker-homebridge.git
-```
-
- * Enter it  
-```bash
-cd RPi-docker-homebridge 
-```
-
- * And use the icluded Dockerfile 
-```bash
-docker build . 
-```
-
- * And run it with specified volume for the config and also `--privileged`and with a  device if you need access to GPIOs   
-```bash
-docker run -d --name NAME --restart unless-stopped --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -v /PATH/TO/LOKATION/OF/YUOR/config.json:/root/.homebridge kimdiallo/homebridge:latest
-```
-
- * You can find the QR code for the HomeApp like this
-```bash
-docker logs [CONTAINER]
-```
-
-In the repo you will find some config and script examples and for further information take these links 
-
-Homebridge itself
  
-https://hub.docker.com/r/kimdiallo/docker_homebridge/
+ * place your config.json in it and run the container like this
+ ```bash
+ docker run --rm -d --name container1 --restart unless-stopped --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -v ~/container1:/root/.homebridge kimdiallo/homebridge:latest 
+ ```
 
-currently supported plugins: 
+ * In addition, you should take a look at the logs on first run, they contain the QR code that you need to add to the HomeApp 
+```bash
+docker logs container1
+```
 
-https://www.npmjs.com/package/homebridge-dht
-
-https://www.npmjs.com/package/homebridge-gpio-device
-
-https://www.npmjs.com/package/homebridge-broadlink-rm
-
-https://www.npmjs.com/package/homebridge-platform-maxcube
-
-https://www.npmjs.com/package/homebridge-script2
+All the rest then happens via HomeApp / Siri on your Apple device. 
 
 
+Of course that was only a short form, it is more detailed in the wiki.
 
 
 
