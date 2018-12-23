@@ -24,34 +24,7 @@ Depends on what you like to control, you need some more hardware like PIR, photo
 
 ## How it works 
 
- * If you are using a Raspberry Pi 3 B and you are already logged in ad [dockerhub](https://hub.docker.com), you just have to create a folder for persistent stuff and the config.json 
+Provides ready to use docker images, config examples and userful helper like a prepared docker-compose.yml and a systemd unit to run docker-compose as a service. All you need to do is add accessories and place many little configs to run homebridges in a modern mircoservice way. 
 
-```bash
-mkdir -p ~/EXAMPLE 
-```
- 
- <br/>
- 
- * place your config.json in it and run the container like this
- 
- ```bash
- docker run --rm -d --name EXAMPLE --restart unless-stopped --network host --device /dev/ttyAMA0:/dev/ttyAMA0 --device /dev/mem:/dev/mem --privileged -v ~/container1:/root/.homebridge kimdiallo/homebridge:latest 
- ```
-
-<br/>
-
- * In addition, you should take a look at the logs on first run, they contain the QR code that you need to add to the HomeApp 
-
-```bash
-docker logs EXAMPLE
-```
-
-<br/>
-All the rest then happens via HomeApp / Siri on your Apple device.
- 
-
-
-Of course that was only a short form, it is more detailed in the [wiki](https://github.com/kimdiallo/RPi-docker-homebridge/wiki).
-
-
+Find more details in the [Wiki](https://github.com/kimdiallo/Pidoho/wiki)
 
