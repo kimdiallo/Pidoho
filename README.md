@@ -8,7 +8,7 @@
 </p>
 
 ## About 
-Goal is to provide an easy way to run a fast stable and lightweight smart home solution based on [homebridge.io](https://github.com/nfarina/homebridge) and [docker](https://www.docker.com/) which allows to control, automate and monitor your home via Siri and [Apple HomeKit](https://www.apple.com/ios/home/).
+The goal is to provide an easy way to run a fast, stable and lightweight smarthome solution based on [homebridge.io](https://github.com/nfarina/homebridge) and [docker](https://www.docker.com/) which allows to control, automate and monitor your home via Siri and [Apple HomeKit](https://www.apple.com/ios/home/).
 
 Free and open source software designed to run on hardware low in purchase and upkeep. 
 
@@ -16,9 +16,9 @@ And still something to tinker.
 
 ## Requirements 
 
-You need running docker instance on a Respberry Pi. If you do not already have one, I would recommend you HypriotOS, a minimal Debian-based operating system optimized for Docker awesomeness. Always up-to-date Docker versions and a big amount of BÄÄM<3 [read more about it](https://blog.hypriot.com/about/)
+You need a working docker instance on a Raspberry Pi. If you do not already have one, I would recommend you [HypriotOS](https://blog.hypriot.com/about/), a minimal Debian-based operating system optimized for Docker awesomeness. Always up-to-date Docker versions and a big amount of BÄÄM<3. [more](https://github.com/kimdiallo/RPi-docker-homebridge/wiki/Getting-started#the-operating-system) 
 
-Depends on what would you like to control, you need some more hardware like PIR, photo-, noise-, or  humiditysensors, or 433 MHz Transmitters. For such things I will create an separate wiki section in the future.   
+Depends on what you like to control, you need some more hardware like PIR, photo-, noise-, or  humiditysensors, or 433 MHz Transmitters. For such things I will create an separate wiki section in the future.   
 
 ## How it works 
 
