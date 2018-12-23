@@ -1,5 +1,6 @@
-# RPi docker homebridge 
+#  **_Pidoho_** 
 
+###### Raspberry Pi docker homebridge 
 
 <p align="center">
          <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Rasp_turn_around.gif" height="100">
@@ -30,6 +31,7 @@ mkdir -p ~/EXAMPLE
 ```
  
  <br/>
+ 
  * place your config.json in it and run the container like this
  
  ```bash
@@ -37,6 +39,7 @@ mkdir -p ~/EXAMPLE
  ```
 
 <br/>
+
  * In addition, you should take a look at the logs on first run, they contain the QR code that you need to add to the HomeApp 
 
 ```bash
@@ -44,7 +47,8 @@ docker logs EXAMPLE
 ```
 
 <br/>
-All the rest then happens via HomeApp / Siri on your Apple device. 
+All the rest then happens via HomeApp / Siri on your Apple device.
+ 
 
 
 Of course that was only a short form, it is more detailed in the [wiki](https://github.com/kimdiallo/RPi-docker-homebridge/wiki).
