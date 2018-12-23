@@ -1,0 +1,39 @@
+version: "3"
+services:
+
+  Container1:
+    image: kimdiallo/homebridge:latest
+    volumes:
+      - "~/EXAMPLE/container1:/root/.homebridge"
+    devices:
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+      - "/dev/mem:/dev/mem"
+    privileged: true
+    network_mode: "host"
+      restart_policy:
+        condition: unless-stopped
+
+  Container2:
+    image: kimdiallo/homebridge:latest
+    volumes:
+      - "~/EXAMPLE/container1:/root/.homebridge"
+    devices:
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+      - "/dev/mem:/dev/mem"
+    privileged: true
+    network_mode: "host"
+      restart_policy:
+        condition: unless-stopped
+
+  Container3:
+    image: kimdiallo/homebridge:latest
+    volumes:
+      - "~/EXAMPLE/container1:/root/.homebridge"
+    devices:
+      - "/dev/ttyAMA0:/dev/ttyAMA0"
+      - "/dev/mem:/dev/mem"
+    privileged: true
+    network_mode: "host"
+      restart_policy:
+        condition: unless-stopped
+
