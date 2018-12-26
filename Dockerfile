@@ -26,7 +26,7 @@ RUN wget abyz.me.uk/rpi/pigpio/pigpio.tar \
 RUN rm -rf pigpio.tar PIGPIO
 
 #Get, build and link nodejs
-ARG VERSION="v8.14.0"
+ARG VERSION="v8.14.1"
 RUN wget https://nodejs.org/dist/${VERSION}/node-${VERSION}-linux-armv7l.tar.gz \
         && tar -zxvf node-${VERSION}-linux-armv7l.tar.gz -C /opt \
         && echo "export PATH=/opt/node-${VERSION}-linux-armv7l/bin:$PATH" >> /root/.bashrc \
