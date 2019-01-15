@@ -27,7 +27,6 @@ ENV PATH="/opt/node-${VERSION}-linux-armv7l/bin:$PATH"
 # Install Homebridge and needed plugins
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
-RUN npm i -g --unsafe-perm homebridge-broadlink-rm
-
+RUN npm i -g --unsafe-perm homebridge-mqttthing
 
 CMD ["homebridge"] 
