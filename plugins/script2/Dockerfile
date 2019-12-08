@@ -1,4 +1,4 @@
-## Dockerfile to run https://www.npmjs.com/package/homebridge-http-switch on a RasperryPi
+## Dockerfile to run https://www.npmjs.com/package/homebridge-script2 on a RasperryPi
 
 #the base image 
 FROM balenalib/raspberrypi3-node:12-buster
@@ -14,6 +14,6 @@ RUN apt-get clean
 # Install Homebridge and needed plugins
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
-RUN npm i -g --unsafe-perm homebridge-http-switch
+RUN npm i -g --unsafe-perm homebridge-script2
 
 CMD ["/usr/local/bin/homebridge"] 

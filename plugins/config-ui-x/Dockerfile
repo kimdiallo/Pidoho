@@ -1,4 +1,4 @@
-## Dockerfile for a homebridgesetup on Raspberry-Pi that is able to interact with GPIOs
+## Dockerfile to run https://www.npmjs.com/package/homebridge-config-ui-x on a RasperryPi
 
 #the base image 
 FROM balenalib/raspberrypi3-node:12-buster
@@ -14,6 +14,6 @@ RUN apt-get clean
 # Install Homebridge and needed plugins
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
-RUN npm i -g --unsafe-perm homebridge-platform-maxcube
+RUN npm i -g --unsafe-perm homebridge-config-ui-x
 
 CMD ["/usr/local/bin/homebridge"] 

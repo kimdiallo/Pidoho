@@ -1,4 +1,4 @@
-## Dockerfile for a homebridgesetup on Raspberry-Pi 
+## Dockerfile to run https://www.npmjs.com/package/homebridge-broadlink-rm on a RasperryPi
 
 #the base image 
 FROM balenalib/raspberrypi3-node:12-buster
@@ -15,6 +15,5 @@ RUN apt-get clean
 RUN npm i -g --upgrade npm@latest
 RUN npm i -g --unsafe-perm homebridge
 RUN npm i -g --unsafe-perm homebridge-broadlink-rm
-
 
 CMD ["/usr/local/bin/homebridge"] 
